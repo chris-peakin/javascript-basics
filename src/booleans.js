@@ -1,61 +1,127 @@
 function negate(a) {
-  // your code here
+  if(a === true){
+    return false;
+  } else if(a === false){
+    return true;
+  }
 };
 
 function both(a, b) {
-  // your code here
+ if ((a === true) && (b === true)){
+   return true;
+ } else {
+   return false;
+ }
 };
 
 function either(a, b) {
-  // your code here
+  if ((a === true) || (b === true)){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function none(a, b) {
-  // your code here
+  if ((a !== true) && (b !== true)){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function one(a, b) {
-  // your code here
+  if ((a === true) && (b === false)){
+    return true;
+  } else if ((a === false) && (b === true)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function truthiness(a) {
-  // your code here
+  if (a){
+    return true;
+  } else{
+    return false;
+  }
 };
 
 function isEqual(a, b) {
-  // your code here
+  if (a === b){
+    return true;
+  } else {
+    return false;
+  };
 };
 
 function isGreaterThan(a, b) {
-  // your code here
+  if (a > b){
+    return true;
+  } else{
+    return false;
+  };
 };
 
 function isLessThanOrEqualTo(a, b) {
-  // your code here
+  if (a <= b){
+    return true;
+  } else{
+    return false;
+  };
 };
 
 function isOdd(a) {
-  // your code here
+  if ((a % 2) > 0){
+    return true;
+  } else{
+    return false;
+  };
 };
 
 function isEven(a) {
-  // your code here
+  if ((a % 2) === 0){
+    return true;
+  } else{
+    return false;
+  }
 };
 
 function isSquare(a) {
-  // your code here
+  squareRoot = Math.sqrt(a);
+  if (Number.isInteger(squareRoot) === true){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 function startsWith(char, string) {
-  // your code here
+  if (char === string.charAt(0)){
+    return true;
+  } else{
+    return false;
+  }
 };
 
 function containsVowels(string) {
-  // your code here
+  /*Observed in another student's shared code.
+  [aeiou]/i is a regular expression, searching for vowels (a, e, i , o and u)...
+  ...in a case-insensitive way.
+  [aeiouAEIOU] would also work, but is less elegant.
+  test() searches for a match between the reg-ex and string...
+  ...returning either true or false. */
+  return /[aeiou]/i.test(string);
 };
 
 function isLowerCase(string) {
-  // your code here
+  //Observed in another student's shared code, but in a longer format
+  if (string === string.toLowerCase()){
+    return true;
+  } else {
+    return false;
+  };
 };
 
 module.exports = {

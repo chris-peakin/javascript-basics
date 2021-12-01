@@ -1,41 +1,74 @@
 const createPerson = (name, age) => {
-  // your code here
+  return {name: name,
+          age: age}
 };
 
 const getName = object => {
-  // your code here
+  return object.name;
 };
 
 const getProperty = (property, object) => {
-  // your code here
+  return object[property];
 };
 
 const hasProperty = (property, object) => {
-  // your code here
+  if (object[property]){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const isOver65 = person => {
-  // your code here
+  if (person.age > 65){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const getAges = people => {
-  // your code here
+  let myArray = [];
+  for (let i = 0; i < people.length; i += 1){
+  myArray.push(people[i].age);
+  };
+  return myArray;
 };
 
 const findByName = (name, people) => {
-  // your code here
+  for (i = 0; i < people.length; i += 1){
+    if (people[i].name === name){
+      return people[i];
+    }
+  }
 };
 
 const findHondas = cars => {
-  // your code here
+  let carList = [];
+  for (let i = 0; i < cars.length; i += 1){
+    if (cars[i].manufacturer === 'Honda'){
+      carList.push(cars[i]);
+    }
+  }
+  return carList;
 };
 
 const averageAge = people => {
-  // your code here
+  let ageAv = 0;
+  for (let i = 0; i < people.length; i += 1){
+    ageAv += people[i].age;
+  }
+  return (ageAv / people.length);
 };
 
 const createTalkingPerson = (name, age) => {
-  // your code here
+  return {
+    "name": name,
+    "age": age,
+    "introduce": (nameTwo) => {
+      return `Hi ${nameTwo}, my name is ${name} and I am ${age}!`
+    }
+  };
 };
 
 module.exports = {
