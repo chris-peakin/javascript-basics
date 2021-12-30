@@ -1,9 +1,5 @@
 const getNthElement = (index, array) => {
-  if (index >= array.length){
-  return array[index - array.length];
-  } else{
-  return array[index];
-  }
+  return (array[(index % array.length)]);
 };
 
 const arrayToCSVString = array => {
@@ -19,8 +15,7 @@ const addToArray = (element, array) => {
 };
 
 const addToArray2 = (element, array) => {
-  const array2 = array.concat(element);
-  return array2;
+  return array.concat(element);
 };
 
 const removeNthElement = (index, array) => {
@@ -28,53 +23,35 @@ const removeNthElement = (index, array) => {
 };
 
 const numbersToStrings = numbers => {
-  let strings = [];
-  for (let i = 0; i < numbers.length; i += 1){
-    strings.push(numbers[i].toString());
-  }
-  return strings;
+  return numbers.map( (individual) => {
+    return individual.toString();
+  });
 };
 
 const uppercaseWordsInArray = strings => {
-  let uppercaseArray = [];
-  for (let i = 0; i < strings.length; i += 1){
-    uppercaseArray.push(strings[i].toUpperCase());
-  }
-  return uppercaseArray;
+  return strings.map( (individual) => {
+    return individual.toUpperCase();
+  });
 };
 
 const reverseWordsInArray = strings => {
-  /*A very difficult problem to solve for me, after some googling, I found the following:
-  https://stackoverflow.com/questions/59621299/javascript-reversing-every-string-of-an-array
-  Solution below is a simplified version of what the person asking the question got to in the end */
-  let reversedArray = [];
-  //First for loop loops through the array and processes each string
+  const reversedArray = []
   for (let i = 0; i < strings.length; i += 1){
-    /*Second for loop stores the letters in reverse, starting with the last character and moving down.
-    j has to be 1 less than the word's length and decreases by 1 each time, and the loop stops it reaches character 0 */
-    let reversedWord = '';
-    for (let j = strings[i].length - 1; j >= 0; j -= 1){
-      reversedWord += strings[i][j];
-    }
-    reversedArray.push(reversedWord);
+    let currentWord = strings[i].split('');
+    let reversedWord = currentWord.reverse();
+    reversedArray.push(reversedWord.join(''));
   }
   return reversedArray;
 };
 
 const onlyEven = numbers => {
-  let evenNumbers = [];
-  for (let i = 0; i < numbers.length; i += 1){
-    /*An even number is any number that gives no remainder when divided by two
-    Only numbers meeting that condition are pushed into the new array */
-    if (numbers[i] % 2 === 0){
-      evenNumbers.push(numbers[i]);
-    }
-  }
-  return evenNumbers;
+  return numbers.filter( (individual) => {
+    return (individual % 2 === 0);
+  });
 };
 
 const removeNthElement2 = (index, array) => {
-  let shorterArray = [...array];
+  const shorterArray = [...array];
   shorterArray.splice(index, 1);
   return shorterArray;
 };
@@ -101,12 +78,9 @@ const removeSpaces = string => {
 };
 
 const sumNumbers = numbers => {
-  let sum = 0;
-  //For loop rolls through array and adds each element to sum until all elements are added
-  for (let i = 0; i < numbers.length; i += 1){
-    sum += numbers[i];
-  }
-  return sum;
+  return numbers.reduce( (a, b) => {
+    return a + b;
+  });
 };
 
 const sortByLastLetter = strings => {

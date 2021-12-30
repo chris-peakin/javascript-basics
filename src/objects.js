@@ -1,6 +1,5 @@
 const createPerson = (name, age) => {
-  return {name: name,
-          age: age}
+  return { name, age }
 };
 
 const getName = object => {
@@ -12,53 +11,35 @@ const getProperty = (property, object) => {
 };
 
 const hasProperty = (property, object) => {
-  if (object[property]){
-    return true;
-  } else {
-    return false;
-  }
+  return object.hasOwnProperty(property);
 };
 
 const isOver65 = person => {
-  if (person.age > 65){
-    return true;
-  } else {
-    return false;
-  }
+  return (person.age > 65);
 };
 
 const getAges = people => {
-  let myArray = [];
-  for (let i = 0; i < people.length; i += 1){
-  myArray.push(people[i].age);
-  };
-  return myArray;
+  return people.map((person) => {
+    return person.age;
+  });
 };
 
 const findByName = (name, people) => {
-  for (i = 0; i < people.length; i += 1){
-    if (people[i].name === name){
-      return people[i];
-    }
-  }
+  return people.find(individual => {
+    return individual.name === name;
+  });
 };
 
 const findHondas = cars => {
-  let carList = [];
-  for (let i = 0; i < cars.length; i += 1){
-    if (cars[i].manufacturer === 'Honda'){
-      carList.push(cars[i]);
-    }
-  }
-  return carList;
+  return cars.filter((individual) => {
+    return individual.manufacturer === 'Honda';
+  });
 };
 
 const averageAge = people => {
-  let ageAv = 0;
-  for (let i = 0; i < people.length; i += 1){
-    ageAv += people[i].age;
-  }
-  return (ageAv / people.length);
+  return (people.reduce((a,b) => {
+    return a + b.age;
+  }, 0) / people.length);
 };
 
 const createTalkingPerson = (name, age) => {

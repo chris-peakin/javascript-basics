@@ -35,11 +35,7 @@ function absolute (a) {
 }
 
 function quotient (a, b) {
-  if (Math.sign(a/b) === -1){
-    return Math.ceil(a/b);
-  } else{
-  return Math.floor(a/b);
-  }
+  return ((Math.sign(a/b) === -1) ? (Math.ceil(a/b)) : (Math.floor(a/b)));
 }
 
 function remainder (a, b) {

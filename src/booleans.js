@@ -1,108 +1,53 @@
 function negate(a) {
-  if(a === true){
-    return false;
-  } else if(a === false){
-    return true;
-  }
+  return !a;
 };
 
 function both(a, b) {
- if ((a === true) && (b === true)){
-   return true;
- } else {
-   return false;
- }
+  return a && b;
 };
 
 function either(a, b) {
-  if ((a === true) || (b === true)){
-    return true;
-  } else {
-    return false;
-  }
+  return a || b;
 };
 
 function none(a, b) {
-  if ((a !== true) && (b !== true)){
-    return true;
-  } else {
-    return false;
-  }
+  return !a && !b;
 };
 
 function one(a, b) {
-  if ((a === true) && (b === false)){
-    return true;
-  } else if ((a === false) && (b === true)) {
-    return true;
-  } else {
-    return false;
-  }
+  return (a && !b) || (!a && b);
 };
 
 function truthiness(a) {
-  if (a){
-    return true;
-  } else{
-    return false;
-  }
+  return !!a;
 };
 
 function isEqual(a, b) {
-  if (a === b){
-    return true;
-  } else {
-    return false;
-  };
+  return a === b;
 };
 
 function isGreaterThan(a, b) {
-  if (a > b){
-    return true;
-  } else{
-    return false;
-  };
+  return a > b;
 };
 
 function isLessThanOrEqualTo(a, b) {
-  if (a <= b){
-    return true;
-  } else{
-    return false;
-  };
+  return a <= b;
 };
 
 function isOdd(a) {
-  if ((a % 2) > 0){
-    return true;
-  } else{
-    return false;
-  };
+  return (a % 2) > 0;
 };
 
 function isEven(a) {
-  if ((a % 2) === 0){
-    return true;
-  } else{
-    return false;
-  }
+  return (a % 2) === 0;
 };
 
 function isSquare(a) {
-  squareRoot = Math.sqrt(a);
-  if (Number.isInteger(squareRoot) === true){
-    return true;
-  } else {
-    return false;
-  }
+  return Number.isInteger(Math.sqrt(a));
 };
 
 function startsWith(char, string) {
-  if (char === string.charAt(0)){
-    return true;
-  } else{
-    return false;
-  }
+  return (char === string.charAt(0));
 };
 
 function containsVowels(string) {
@@ -116,12 +61,7 @@ function containsVowels(string) {
 };
 
 function isLowerCase(string) {
-  //Observed in another student's shared code, but in a longer format
-  if (string === string.toLowerCase()){
-    return true;
-  } else {
-    return false;
-  };
+  return (string === string.toLowerCase());
 };
 
 module.exports = {
